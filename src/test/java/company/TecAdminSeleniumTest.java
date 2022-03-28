@@ -40,7 +40,7 @@ public class TecAdminSeleniumTest {
 
         String firstBestChoice = "/html/body/div[1]/div[3]/div[3]/div[5]/div/div[2]/div/div[1]/div/div/div/div/div/article[1]/div[3]/a";
 
-        @Test
+
         public void OpenStartPage() throws InterruptedException {
                     driver.get(baseURL);
                     if (driver.getPageSource().contains("робот")) {
