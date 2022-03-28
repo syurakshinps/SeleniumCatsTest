@@ -31,6 +31,8 @@ public class TecAdminSeleniumTest {
     @BeforeEach
      public void SetUp() {
           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\chromedriver.exe");
+
           ChromeOptions chromeOptions = new ChromeOptions();
           //  chromeOptions.addArguments("--headless");
           //   chromeOptions.addArguments("--no-sandbox");
