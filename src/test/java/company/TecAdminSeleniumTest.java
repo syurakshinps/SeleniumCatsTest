@@ -29,6 +29,7 @@ public class TecAdminSeleniumTest {
     private static final String firstBestChoice = "/html/body/div[1]/div[3]/div[3]/div[5]/div/div[2]/div/div[1]/div/div/div/div/div/article[1]/div[3]/a";
 
     @BeforeEach
+    //@Order(1)
      public void SetUp() {
           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\chromedriver.exe");
@@ -41,7 +42,7 @@ public class TecAdminSeleniumTest {
      }
 
         @Test
-        @Order(1)
+        @Order(2)
         @DisplayName("Открытие стартовой страницы")
         public void OpenStartPage() throws InterruptedException {
             driver.get(baseURL);
@@ -55,7 +56,7 @@ public class TecAdminSeleniumTest {
             }
 
         @Test
-        @Order(2)
+        @Order(3)
         @DisplayName("Кликнули на каталог")
         public void CatalogueClick() throws InterruptedException {
         WebElement catalogue = driver.findElement(By.xpath(catalogueButton));
@@ -67,7 +68,7 @@ public class TecAdminSeleniumTest {
         }
 
         @Test
-        @Order(3)
+        @Order(4)
         @DisplayName("hover Зоотовары")
         public  void HoverPetsGoods() throws InterruptedException {
         Actions action = new Actions(driver);
@@ -77,7 +78,7 @@ public class TecAdminSeleniumTest {
         Thread.sleep(10000);
         }
         @Test
-        @Order(4)
+        @Order(5)
         @DisplayName("Переход в лакомства")
         public  void CatsTreats() throws InterruptedException {
             String policyPageWindow = driver.getWindowHandle();
@@ -89,7 +90,7 @@ public class TecAdminSeleniumTest {
             Thread.sleep(10000);
         }
         @Test
-        @Order(5)
+        @Order(6)
         @DisplayName("Выбор цены")
         public  void MinMax() throws InterruptedException {
             driver.findElement(By.xpath(priceFromField)).sendKeys(priceMin);
@@ -100,7 +101,7 @@ public class TecAdminSeleniumTest {
             Thread.sleep(10000);
         }
         @Test
-        @Order(6)
+        @Order(7)
         @DisplayName("выбор радиокнопок")
         public  void RadioButtons() throws InterruptedException {
         WebElement radio1 = driver.findElement(By.xpath(deliveryServiceRadioBtn));
@@ -114,7 +115,7 @@ public class TecAdminSeleniumTest {
         Thread.sleep(10000);
         }
         @Test
-        @Order(7)
+        @Order(8)
         @DisplayName("Выбор продукта")
         public  void ChooseTheFood() throws InterruptedException {
         WebElement choice = driver.findElement(By.xpath(firstBestChoice));
@@ -123,7 +124,8 @@ public class TecAdminSeleniumTest {
         Thread.sleep(10000);
         }
 
-        @AfterEach
+        @Test
+        @Order(9)
         @DisplayName("Стопаем драйвер")
         public  void TearDown() throws InterruptedException {
             driver.quit();
