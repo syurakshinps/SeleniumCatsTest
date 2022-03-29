@@ -5,9 +5,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import java.io.IOException;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TecAdminSeleniumTest {
      private WebDriver driver;
 
@@ -28,9 +27,13 @@ public class TecAdminSeleniumTest {
     private static final String makerName = "/html/body/div[1]/div[3]/div[3]/div[5]/aside/div[2]/div/div/div/div/div[2]/div[4]/div/div/fieldset/ul/li[11]/div/a/label/div";
     private static final String firstBestChoice = "/html/body/div[1]/div[3]/div[3]/div[5]/div/div[2]/div/div[1]/div/div/div/div/div/article[1]/div[3]/a";
 
-    @BeforeEach
-    //@Order(1)
-     public void SetUp() {
+/*
+    @Test
+    @Order(1)
+    */
+      @BeforeAll
+      //@Test
+        public void SetUp() {
           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\chromedriver.exe");
 
@@ -39,14 +42,15 @@ public class TecAdminSeleniumTest {
           //   chromeOptions.addArguments("--no-sandbox");
           //   chromeOptions.addArguments("log-level=2");
           driver = new ChromeDriver(chromeOptions);
-     }
+    }
 
         @Test
         @Order(2)
         @DisplayName("Открытие стартовой страницы")
         public void OpenStartPage() throws InterruptedException {
             driver.get(baseURL);
-                  Assertions.assertTrue(driver.getPageSource().contains("робот"));
+
+                //  Assertions.assertTrue(driver.getPageSource().contains("робот"));
 
                     if (driver.getPageSource().contains("робот")) {
                             System.out.println("капча руками проходится, ибо");
