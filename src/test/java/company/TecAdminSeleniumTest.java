@@ -35,6 +35,15 @@ public class TecAdminSeleniumTest {
       @BeforeAll
       //@Test
         public void SetUp() {
+          /*
+1. chromeOptions.addArguments("user-data-dir=/home/nihil/snap/chromium/common/chromium/SeleniumAutoTests"); //придумываем имя директории, он в нее родит нестираемый профиль
+2. в драйвере
+а) создаем профиль (используем акк в гугле)
+б) логинимся в яндекс
+3. при первом запуске снимаем птичку "показывать на старте" в окне для выбора профиля
+4. капчи больше нет.
+           */
+
           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\chromedriver.exe");
 
