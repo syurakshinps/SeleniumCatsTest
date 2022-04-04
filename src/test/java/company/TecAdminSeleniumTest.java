@@ -6,7 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TecAdminSeleniumTest {
      private WebDriver driver;
 
@@ -38,10 +39,12 @@ public class TecAdminSeleniumTest {
         //System.setProperty("webdriver.chrome.driver","src\\test\\resources\\chromedriver.exe");
 
           ChromeOptions chromeOptions = new ChromeOptions();
-          //  chromeOptions.addArguments("--headless");
+          //chromeOptions.addArguments("--headless");
           //   chromeOptions.addArguments("--no-sandbox");
-          //   chromeOptions.addArguments("log-level=2");
+          chromeOptions.addArguments("log-level=2");
+          chromeOptions.addArguments("user-data-dir=/home/nihil/snap/chromium/common/chromium/SeleniumAutoTests");
           driver = new ChromeDriver(chromeOptions);
+
     }
 
         @Test
@@ -49,14 +52,15 @@ public class TecAdminSeleniumTest {
         @DisplayName("Открытие стартовой страницы")
         public void OpenStartPage() throws InterruptedException {
             driver.get(baseURL);
-
+/*
                 //  Assertions.assertTrue(driver.getPageSource().contains("робот"));
 
                     if (driver.getPageSource().contains("робот")) {
                             System.out.println("капча руками проходится, ибо");
                             //          https://www.browserstack.com/guide/how-to-handle-captcha-in-selenium
                     }
-         Thread.sleep(30000);
+         Thread.sleep(3000); //namefio586
+            */
             }
 
         @Test
@@ -67,8 +71,8 @@ public class TecAdminSeleniumTest {
         //    Assertions.assertTrue(driver.getPageSource().contains("Зоо"));
 
         catalogue.click();
-        System.out.println("Кликнули на каталог");
-        Thread.sleep(10000);
+    //    System.out.println("Кликнули на каталог");
+        Thread.sleep(1000);
         }
 
         @Test
@@ -78,8 +82,8 @@ public class TecAdminSeleniumTest {
         Actions action = new Actions(driver);
         WebElement ele = driver.findElement(By.xpath(goodsKind));
         action.moveToElement(ele).perform();
-        System.out.println("hover Зоотовары");
-        Thread.sleep(10000);
+   //     System.out.println("hover Зоотовары");
+        Thread.sleep(1000);
         }
         @Test
         @Order(5)
@@ -90,8 +94,8 @@ public class TecAdminSeleniumTest {
             for (String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
             }
-            System.out.println("Перешли в лакомства");
-            Thread.sleep(10000);
+    //        System.out.println("Перешли в лакомства");
+            Thread.sleep(1000);
         }
         @Test
         @Order(6)
@@ -101,8 +105,8 @@ public class TecAdminSeleniumTest {
             System.out.println("min price " + priceMin);
 
             driver.findElement(By.xpath(priceToFiled)).sendKeys(priceMax);
-            System.out.println("max price " + priceMax);
-            Thread.sleep(10000);
+      //      System.out.println("max price " + priceMax);
+            Thread.sleep(1000);
         }
         @Test
         @Order(7)
@@ -110,13 +114,13 @@ public class TecAdminSeleniumTest {
         public  void RadioButtons() throws InterruptedException {
         WebElement radio1 = driver.findElement(By.xpath(deliveryServiceRadioBtn));
         radio1.click();
-        System.out.println("Доставка курьером бутон клац");
+     //   System.out.println("Доставка курьером бутон клац");
         Thread.sleep(10000);
 
         WebElement radio2 = driver.findElement(By.xpath(makerName));
         radio2.click();
-        System.out.println("Деревенские лакомства - маректолога потом уволили, надеюсь");
-        Thread.sleep(10000);
+    //    System.out.println("Деревенские лакомства - маректолога потом уволили, надеюсь");
+        Thread.sleep(1000);
         }
         @Test
         @Order(8)
@@ -124,8 +128,8 @@ public class TecAdminSeleniumTest {
         public  void ChooseTheFood() throws InterruptedException {
         WebElement choice = driver.findElement(By.xpath(firstBestChoice));
         choice.click();
-        System.out.println("Первый в списке под популярными");
-        Thread.sleep(10000);
+      //  System.out.println("Первый в списке под популярными");
+        Thread.sleep(1000);
         }
 
         @Test

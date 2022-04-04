@@ -1,0 +1,8 @@
+[382371:382371:0404/152409.154137:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
+[382424:382424:0404/152409.179664:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.
+[382505:16:0404/152409.834043:WARNING:media_session.cc(936)] RED codec red is missing an associated payload type.
+[382505:16:0404/152418.775764:WARNING:media_session.cc(936)] RED codec red is missing an associated payload type.
+[382425:382443:0404/152421.753007:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[382425:382438:0404/152421.753019:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[382425:382443:0404/152421.753123:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[382371:382371:0404/152421.778900:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
